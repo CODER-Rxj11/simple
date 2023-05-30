@@ -1,7 +1,8 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import Box from '@mui/material/Box';
-import Slider from '@mui/material/Slider';
+
+import Card from './card';
 
 // function valuetext(value: number) {
 //   return `${value}°C`;
@@ -17,8 +18,8 @@ const home = () => {
 
   return (
     <div>
-      <Container className='mt-2'>
-        <div className="left bg-white w-25 d">
+      <Container className='d-flex mx-5 mt-2'>
+        <div className="left bg-white w-25 ">
           <div className="container ">
             <div className="sidebar d-flex align-items-start flex-column">
               <h6 className='mt-2 mb-1'>POPULARITY</h6>
@@ -120,8 +121,19 @@ const home = () => {
             </div>
           </div>
         </div>
-        <div className="bg-primary right w-75 h-100">
-          {/* hii */}
+        <div className="right">
+          <div className="top">
+            <div className="lft"></div>
+            <div className="rgt"></div>
+          </div>
+          <div className="cards d-flex flex-column mx-3">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </div>
         </div>
       </Container>
     </div>
