@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container } from 'react-bootstrap'
 import Box from '@mui/material/Box';
 import Button from 'react-bootstrap/Button';
@@ -11,11 +11,12 @@ import Card from './card';
 
 const home = () => {
 
-//  const [value, setValue] = React.useState();
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [value, setValue] = useState(50);
 
-//   const handleChange = (event: Event, newValue: 0 | 10M) => {
-//     setValue(newValue as number[]);
-//   };
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
 
   return (
     <div>
@@ -25,22 +26,39 @@ const home = () => {
             <div className="sidebar d-flex align-items-start flex-column">
               <h6 className='mt-2 mb-1'>POPULARITY</h6>
               <div className="checkboxes d-flex align-items-start flex-column">
-        <label className='mt-1'>
+                <label className='mt-1'>
           <input className='mt-1' type="checkbox" />
           {''} Nano(1k-9k)
-        </label>
-        <label className='mt-1'>
+                </label>
+                <label className='mt-1'>
           <input className='mt-1' type="checkbox" />
           {''} Micro(100k-999k)
-        </label>
-        <label className='mt-1'>
+                </label>
+                <label className='mt-1'>
           <input className='mt-1' type="checkbox" />
           {''} Macro(1M-10M)
-        </label>
-        <label className='mt-1'>
-          <input className='mt-1' type="checkbox" checked />
-          Custom
-        </label>
+                </label>
+                <label className='mt-1'>
+                <input className='mt-1' type="checkbox" checked />
+                Custom
+                </label>
+                  <div className='range-bar'>
+                    <input
+                      type="range"
+                      min={0}
+                      max={100}
+                      value={value}
+                      onChange={handleChange}
+                      className="slider"
+                    />
+                  <div className="slider-bar">
+                    <div className="range-indicator" style={{ left: `${value}%` }}></div>
+                  </div>
+                  <div className="value d-flex justify-content-between">
+                    <h6>0</h6>
+                    <h6>10M</h6>
+                  </div>
+                  </div>
               </div>
               <h6 className='mt-2 mb-1'>CAMPAIGN PREFERNCE</h6>
               <div className="checkboxes d-flex align-items-start flex-column">
@@ -65,18 +83,41 @@ const home = () => {
               </label>
               </div>
               <h6 className='mt-2 mb-1'>ENGAGEMENT RATE</h6>
-              <div className="value-bar">
-                  <Box sx={{ width: 300 }}>
-                    {/* <Slider
-                      getAriaLabel={() => 'Temperature range'}
+              <div className='range-bar'>
+                    <input
+                      type="range"
+                      min={0}
+                      max={100}
                       value={value}
                       onChange={handleChange}
-                      valueLabelDisplay="auto"
-                      getAriaValueText={valuetext}
-                /> */}
-    </Box>
-              </div>
+                      className="slider"
+                    />
+                  <div className="slider-bar">
+                    <div className="range-indicator" style={{ left: `${value}%` }}></div>
+                  </div>
+                  <div className="value d-flex justify-content-between">
+                    <h6>0</h6>
+                    <h6>10M</h6>
+                  </div>
+                  </div>
               <h6 className='mt-2 mb-1'>AVERAGE</h6>
+              <div className='range-bar'>
+                    <input
+                      type="range"
+                      min={0}
+                      max={100}
+                      value={value}
+                      onChange={handleChange}
+                      className="slider"
+                    />
+                  <div className="slider-bar">
+                    <div className="range-indicator" style={{ left: `${value}%` }}></div>
+                  </div>
+                  <div className="value d-flex justify-content-between">
+                    <h6>0</h6>
+                    <h6>10M</h6>
+                  </div>
+                  </div>
               <div className="value-bar">
                   <Box sx={{ width: 300 }}>
                     {/* <Slider
