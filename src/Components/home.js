@@ -1,7 +1,8 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import Box from '@mui/material/Box';
-
+import Button from 'react-bootstrap/Button';
+import card from 'react-bootstrap/Card';
 import Card from './card';
 
 // function valuetext(value: number) {
@@ -122,9 +123,27 @@ const home = () => {
           </div>
         </div>
         <div className="right">
-          <div className="top">
-            <div className="lft"></div>
-            <div className="rgt"></div>
+          <div className="top d-flex justify-content-between ">
+            <div className="lft">
+              <div className="container">
+                <p className='mx-2 pb-0' style={{fontWeight:"600"}}>Sort By</p>
+                <div className="buttons d-flex align-items-start">
+                  <button className='btn bg-white' style={{borderRadius:"50px"}}>High to low</button>
+                  <button className='btn bg-white mx-2' style={{borderRadius:"50px"}}>Low to high</button>
+                  <button className='btn bg-white mx-2' style={{borderRadius:"50px"}}>Newest</button>
+                  <button className='btn bg-primary mx-2' style={{borderRadius:"50px", color:"#FFF"}}>Popular</button>
+                </div>
+              </div>
+            </div>
+            <div className="rgt">
+                <div className="container">
+                  <card.Body className='d-flex my-2'>
+                    <Button className='btn-sm mx-1 my-1' style={{color:"blue",fontWeight:"600"}} variant="tertiory">SELECT ALL</Button>
+                    <Button className='btn-sm mx-1' variant="secondary" style={{background:"white", color:"blue", fontWeight:"600"}}>INVITE</Button>
+                    <Button style={{fontWeight:"600"}} className='btn-sm btn-primary mx-2' variant="primary">ADD CAMPAIGN</Button>
+                </card.Body>
+                </div>
+            </div>
           </div>
           <div className="cards d-flex flex-column mx-3">
             <Card />
