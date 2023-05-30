@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 const navbar = () => {
   return (
-    <Navbar bg="light" expand="lg" style={{borderRadius:'50px'}} className='mt-3'>
+    <Navbar bg="white" expand="sm" style={{borderRadius:'50px'}} className='p-2'>
       <Container fluid>
         <Navbar bg="light" variant="light   ">
         <Container>
@@ -14,7 +14,7 @@ const navbar = () => {
               src="/logo.png"
               width="30"
               height="30"
-              className="d-inline-block align-top"
+              className="d-inline-block align-top bg-white"
             />          </Navbar.Brand>
         </Container>
       </Navbar>
